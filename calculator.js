@@ -8,7 +8,7 @@
 
 // calculate
 // # afterTaxDeposit // deposit - tax based on current tax rate, TFSA
-// futureValue // net deposit , years, return rate, inflation rate
+// # futureValue // net deposit , years, return rate, inflation rate
 // withdrawalTax // based on future tax rate, RRSP
 // afterTaxFutureValue
 
@@ -28,9 +28,14 @@ function calculatePresentValue(inflationRate, amount, years){
   return Math.round(amount/((1+inflationRate/100)**years))
 }
 
+function calculateRealValue(returnRate, inflationRate, amount, years){
+  return Math.round(amount*((1+returnRate/100)/(1+inflationRate/100))**years)
+}
+
 module.exports = {
   calculateTax,
   calculateAfterTaxDeposit,
   calculateFutureValue,
-  calculatePresentValue
+  calculatePresentValue,
+  calculateRealValue
 }
