@@ -16,4 +16,11 @@ function calculateTax(rate, amount){
   return (rate/100)*amount
 }
 
-module.exports = {calculateTax}
+function calculateAfterTaxDeposit(rate, amount){
+  return amount - calculateTax(rate, amount)
+}
+
+module.exports = {
+  calculateTax,
+  calculateAfterTaxDeposit
+}
