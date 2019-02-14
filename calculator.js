@@ -12,7 +12,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const returnRate = formData.get("return-rate");
     const inflationRate = formData.get("inflation-rate");
     // calculate output
-    
+    const afterTaxDepositTFSA = calculateAfterTaxValue(currentTaxRate, deposit);
+    const afterTaxDepositRRSR = deposit;
+    const retirementSumTFSA = calculateFutureValue(returnRate, afterTaxDepositTFSA, years);
+    const retirementSumRRSR = calculateFutureValue(returnRate, afterTaxDepositRRSR, years);
+    const adjustedRetirementSumTFSA = calculatePresentValue(inflationRate, retirementSumTFSA, years);
+    const adjustedRetirementSumRRSR = calculatePresentValue(inflationRate, retirementSumRRSR, years);
+    const taxAtWithdrawalTFSA = 0;
+    const taxAtWithdrawalRRSR = calculateTax(retirementTaxRate, retirementSumRRSR);
+    const afterTaxRetirementSumTFSA = retirementSumTFSA;
+    const afterTaxRetirementSumRRSR = calculateAfterTaxValue(retirementTaxRate, retirementSumRRSR);
+    const adjustedAfterTaxRetirementSumTFSA = calculatePresentValue(inflationRate, afterTaxRetirementSumTFSA, years);
+    const adjustedAfterTaxRetirementSumRRSR = calculatePresentValue(inflationRate, afterTaxRetirementSumRRSR, years);
     // display output
     
   })
