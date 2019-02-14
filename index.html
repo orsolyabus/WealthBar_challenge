@@ -9,44 +9,46 @@
   <script src="calculator.js"></script>
 </head>
 <body>
+<main>
   <h1>TFSA vs RRSP Calculator</h1>
   <p>This is a financial calculator that compares using a TFSA (tax-free savings account) and RRSP (registered retirement savings plan) to save money.<br/>
-    RRSPs allow you to defer paying taxes until you withdraw money from your account. When you deposit after-tax money into your RSP you get a tax refund on that money. A TFSA, on the other hand, allows you to save after tax money in a way that the future growth (interest earned) remains tax-free forever so all future withdrawals are not taxed.
+    RRSPs allow you to defer paying taxes until you withdraw money from your account. When you deposit after-tax money into your RSP you get a tax refund on that money. <br/>
+    A TFSA, on the other hand, allows you to save after tax money in a way that the future growth (interest earned) remains tax-free forever so all future withdrawals are not taxed.
   </p>
   
   <div>
     <form action="" id="calculator-form">
       <div>
         <label for="current-tax-rate">Current Marginal Tax Rate</label>
-        <input type="text" name="current-tax-rate" id="current-tax-rate">
-        <small>Your current highest income tax bracket</small>
+        <input type="text" class="input" name="current-tax-rate" id="current-tax-rate">
+        <hint>Your current highest income tax bracket</hint>
       </div>
       <div>
         <label for="retirement-tax-rate">Tax Rate in Retirement</label>
-        <input type="text" name="retirement-tax-rate" id="retirement-tax-rate">
-        <small>The average income tax you will pay in retirement</small>
+        <input type="text" class="input" name="retirement-tax-rate" id="retirement-tax-rate">
+        <hint>The average income tax you will pay in retirement</hint>
       </div>
       <div>
         <label for="deposit">Deposit</label>
-        <input type="text" name="deposit" id="deposit">
-        <small>The amount of money being deposited in dollars</small>
+        <input type="text" class="input" name="deposit" id="deposit">
+        <hint>The amount of money being deposited in dollars</hint>
       </div>
       <div>
         <label for="years">Years Invested</label>
-        <input type="text" name="years" id="years">
-        <small>The number of years before this money is withdrawn again</small>
+        <input type="text" class="input" name="years" id="years">
+        <hint>The number of years before this money is withdrawn again</hint>
       </div>
       <div>
         <label for="return-rate">Return Rate</label>
-        <input type="text" name="return-rate" id="return-rate">
-        <small>Rate at which the invested money grows each year</small>
+        <input type="text" class="input" name="return-rate" id="return-rate">
+        <hint>Rate at which the invested money grows each year</hint>
       </div>
       <div>
         <label for="inflation-rate">Inflation Rate</label>
-        <input type="text" name="inflation-rate" id="inflation-rate">
-        <small>The expected rate of inflation each year</small>
+        <input type="text" class="input" name="inflation-rate" id="inflation-rate">
+        <hint>The expected rate of inflation each year</hint>
       </div>
-      <input type="submit" id="submit" value="Calculate">
+      <input type="submit" id="submit" class="btn" value="Calculate">
     </form>
 
     <div id="results">
@@ -94,8 +96,9 @@
       </table>
     </div>
     <br/>
-    <button id="clear">Clear</button>
+    <button id="clear" class="btn">Clear</button>
     
   </div>
+</main>
 </body>
 </html>
