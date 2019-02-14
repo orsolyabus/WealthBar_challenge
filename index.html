@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,97 +10,101 @@
   <script src="calculator.js"></script>
   <script src="calculator.test.js"></script>
 </head>
-<body>
-<main>
-  <h1>TFSA vs RRSP Calculator</h1>
-  <p>This is a financial calculator that compares using a TFSA (tax-free savings account) and RRSP (registered retirement savings plan) to save money.<br/>
-    RRSPs allow you to defer paying taxes until you withdraw money from your account. When you deposit after-tax money into your RSP you get a tax refund on that money. <br/>
-    A TFSA, on the other hand, allows you to save after tax money in a way that the future growth (interest earned) remains tax-free forever so all future withdrawals are not taxed.
-  </p>
-  
-  <div>
-    <form action="" id="calculator-form">
-      <div>
-        <label for="current-tax-rate">Current Marginal Tax Rate</label>
-        <input type="text" class="input" name="current-tax-rate" id="current-tax-rate">
-        <hint>Your current highest income tax bracket</hint>
-      </div>
-      <div>
-        <label for="retirement-tax-rate">Tax Rate in Retirement</label>
-        <input type="text" class="input" name="retirement-tax-rate" id="retirement-tax-rate">
-        <hint>The average income tax you will pay in retirement</hint>
-      </div>
-      <div>
-        <label for="deposit">Deposit</label>
-        <input type="text" class="input" name="deposit" id="deposit">
-        <hint>The amount of money being deposited in dollars</hint>
-      </div>
-      <div>
-        <label for="years">Years Invested</label>
-        <input type="text" class="input" name="years" id="years">
-        <hint>The number of years before this money is withdrawn again</hint>
-      </div>
-      <div>
-        <label for="return-rate">Return Rate</label>
-        <input type="text" class="input" name="return-rate" id="return-rate">
-        <hint>Rate at which the invested money grows each year</hint>
-      </div>
-      <div>
-        <label for="inflation-rate">Inflation Rate</label>
-        <input type="text" class="input" name="inflation-rate" id="inflation-rate">
-        <hint>The expected rate of inflation each year</hint>
-      </div>
-      <input type="submit" id="submit" class="btn" value="Calculate">
-    </form>
 
-    <div id="results">
-      <table>
-        <tr>
-          <th></th>
-          <th>TFSA</th>
-          <th>RRSP</th>
-        </tr>
-        <tr>
-          <td>Pre-tax income</td>
-          <td id="deposit-TFSA" class="table-value"></td>
-          <td id="deposit-RRSR" class="table-value"></td>
-        </tr>
-        <tr>
-          <td id="">After-tax deposit</td>
-          <td id="after-tax-deposit-TFSA" class="table-value"></td>
-          <td id="after-tax-deposit-RRSR" class="table-value"></td>
-        </tr>
-        <tr>
-          <td id="">Future value at retirement</td>
-          <td id="retirement-sum-TFSA" class="table-value"></td>
-          <td id="retirement-sum-RRSR" class="table-value"></td>
-        </tr>
-        <tr>
-          <td id="">Inflation adjusted value at retirement</td>
-          <td id="adjusted-retirement-sum-TFSA" class="table-value"></td>
-          <td id="adjusted-retirement-sum-RRSR" class="table-value"></td>
-        </tr>
-        <tr>
-          <td id="">Tax upon withdrawal</td>
-          <td id="tax-at-withdrawal-TFSA" class="table-value"></td>
-          <td id="tax-at-withdrawal-RRSR" class="table-value"></td>
-        </tr>
-        <tr>
-          <td id="">After-tax future value</td>
-          <td id="after-tax-retirement-sum-TFSA" class="table-value"></td>
-          <td id="after-tax-retirement-sum-RRSR" class="table-value"></td>
-        </tr>
-        <tr>
-          <td id="">Inflation adjusted after-tax future value</td>
-          <td id="adjusted-after-tax-retirement-sum-TFSA" class="table-value"></td>
-          <td id="adjusted-after-tax-retirement-sum-RRSR" class="table-value"></td>
-        </tr>
-      </table>
+<body>
+  <main>
+    <h1>TFSA vs RRSP Calculator</h1>
+    <p>This is a financial calculator that compares using TFSA (tax-free savings account) and RRSP (registered
+      retirement savings plan) to save money.</p>
+    <p>RRSPs allow you to defer paying taxes until you withdraw money from your account. When you deposit after-tax
+      money into your RSP you get a tax refund on that money. </p>
+    <p>A TFSA, on the other hand, allows you to save after tax money in a way that the future growth (interest earned)
+      remains tax-free forever so all future withdrawals are not taxed.</p>
+
+    <div>
+      <form action="" id="calculator-form">
+        <div>
+          <label for="current-tax-rate">Current Marginal Tax Rate</label>
+          <input type="text" class="input" name="current-tax-rate" id="current-tax-rate">
+          <hint>Your current highest income tax bracket</hint>
+        </div>
+        <div>
+          <label for="retirement-tax-rate">Tax Rate in Retirement</label>
+          <input type="text" class="input" name="retirement-tax-rate" id="retirement-tax-rate">
+          <hint>The average income tax you will pay in retirement</hint>
+        </div>
+        <div>
+          <label for="deposit">Deposit</label>
+          <input type="text" class="input" name="deposit" id="deposit">
+          <hint>The amount of money being deposited in dollars</hint>
+        </div>
+        <div>
+          <label for="years">Years Invested</label>
+          <input type="text" class="input" name="years" id="years">
+          <hint>The number of years before this money is withdrawn again</hint>
+        </div>
+        <div>
+          <label for="return-rate">Return Rate</label>
+          <input type="text" class="input" name="return-rate" id="return-rate">
+          <hint>Rate at which the invested money grows each year</hint>
+        </div>
+        <div>
+          <label for="inflation-rate">Inflation Rate</label>
+          <input type="text" class="input" name="inflation-rate" id="inflation-rate">
+          <hint>The expected rate of inflation each year</hint>
+        </div>
+        <input type="submit" id="submit" class="btn" value="Calculate">
+      </form>
+
+      <div id="results">
+        <table>
+          <tr>
+            <th></th>
+            <th>TFSA</th>
+            <th>RRSP</th>
+          </tr>
+          <tr>
+            <td>Pre-tax income</td>
+            <td id="deposit-TFSA" class="table-value"></td>
+            <td id="deposit-RRSR" class="table-value"></td>
+          </tr>
+          <tr>
+            <td id="">After-tax deposit</td>
+            <td id="after-tax-deposit-TFSA" class="table-value"></td>
+            <td id="after-tax-deposit-RRSR" class="table-value"></td>
+          </tr>
+          <tr>
+            <td id="">Future value at retirement</td>
+            <td id="retirement-sum-TFSA" class="table-value"></td>
+            <td id="retirement-sum-RRSR" class="table-value"></td>
+          </tr>
+          <tr>
+            <td id="">Inflation adjusted value at retirement</td>
+            <td id="adjusted-retirement-sum-TFSA" class="table-value"></td>
+            <td id="adjusted-retirement-sum-RRSR" class="table-value"></td>
+          </tr>
+          <tr>
+            <td id="">Tax upon withdrawal</td>
+            <td id="tax-at-withdrawal-TFSA" class="table-value"></td>
+            <td id="tax-at-withdrawal-RRSR" class="table-value"></td>
+          </tr>
+          <tr>
+            <td id="">After-tax future value</td>
+            <td id="after-tax-retirement-sum-TFSA" class="table-value"></td>
+            <td id="after-tax-retirement-sum-RRSR" class="table-value"></td>
+          </tr>
+          <tr>
+            <td id="">Inflation adjusted after-tax future value</td>
+            <td id="adjusted-after-tax-retirement-sum-TFSA" class="table-value"></td>
+            <td id="adjusted-after-tax-retirement-sum-RRSR" class="table-value"></td>
+          </tr>
+        </table>
+      </div>
+      <br />
+      <button id="clear" class="btn">Clear</button>
+
     </div>
-    <br/>
-    <button id="clear" class="btn">Clear</button>
-    
-  </div>
-</main>
+  </main>
 </body>
+
 </html>
