@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("document loaded");
+  
   document.querySelector("#calculator-form").addEventListener("submit", event => {
     // get input data
     event.preventDefault();
@@ -11,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const years = formData.get("years");
     const returnRate = formData.get("return-rate");
     const inflationRate = formData.get("inflation-rate");
+    
     // calculate output
     const afterTaxDepositTFSA = calculateAfterTaxValue(currentTaxRate, deposit);
     const afterTaxDepositRRSR = deposit;
@@ -24,8 +26,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const afterTaxRetirementSumRRSR = calculateAfterTaxValue(retirementTaxRate, retirementSumRRSR);
     const adjustedAfterTaxRetirementSumTFSA = calculatePresentValue(inflationRate, afterTaxRetirementSumTFSA, years);
     const adjustedAfterTaxRetirementSumRRSR = calculatePresentValue(inflationRate, afterTaxRetirementSumRRSR, years);
-    // display output
     
+    // display results
+    document.querySelector("#deposit-TFSA").innerHTML = deposit
+    document.querySelector("#deposit-RRSR").innerHTML = deposit
+    document.querySelector("#after-tax-deposit-TFSA").innerHTML = afterTaxDepositTFSA
+    document.querySelector("#after-tax-deposit-RRSR").innerHTML = afterTaxDepositRRSR
+    document.querySelector("#retirement-sum-TFSA").innerHTML = retirementSumTFSA
+    document.querySelector("#retirement-sum-RRSR").innerHTML = retirementSumRRSR
+    document.querySelector("#adjusted-retirement-sum-TFSA").innerHTML = adjustedRetirementSumTFSA
+    document.querySelector("#adjusted-retirement-sum-RRSR").innerHTML = adjustedRetirementSumRRSR
+    document.querySelector("#tax-at-withdrawal-TFSA").innerHTML = taxAtWithdrawalTFSA
+    document.querySelector("#tax-at-withdrawal-RRSR").innerHTML = taxAtWithdrawalRRSR
+    document.querySelector("#after-tax-retirement-sum-TFSA").innerHTML = afterTaxRetirementSumTFSA
+    document.querySelector("#after-tax-retirement-sum-RRSR").innerHTML = afterTaxRetirementSumRRSR
+    document.querySelector("#adjusted-after-tax-retirement-sum-TFSA").innerHTML = adjustedAfterTaxRetirementSumTFSA
+    document.querySelector("#adjusted-after-tax-retirement-sum-RRSR").innerHTML = adjustedAfterTaxRetirementSumRRSR
+
   })
 });
 
@@ -34,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // the brain
 
 function calculateTax(rate, amount){
-  return (rate/100)*amount
+  return Math.round((rate/100)*amount)
 }
 
 function calculateAfterTaxValue(rate, amount){
