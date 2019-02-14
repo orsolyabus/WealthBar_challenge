@@ -1,16 +1,26 @@
-// given
-// currentTaxRate
-// futureTaxRate
-// deposit
-// years
-// returnRate
-// inflationRate
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("document loaded");
+  document.querySelector("#calculator-form").addEventListener("submit", event => {
+    // get input data
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const currentTaxRate = formData.get("current-tax-rate");
+    const retirementTaxRate = formData.get("retirement-tax-rate");
+    const deposit = formData.get("deposit");
+    const years = formData.get("years");
+    const returnRate = formData.get("return-rate");
+    const inflationRate = formData.get("inflation-rate");
+    // calculate output
+    
+    // display output
+    
+  })
+});
 
-// calculate
-// # afterTaxValue // deposit - tax based on current tax rate, TFSA
-// # futureValue // net deposit , years, return rate, inflation rate
-// # withdrawalTax // based on future tax rate, RRSP
-// # afterTaxFutureValue
+
+
+// the brain
 
 function calculateTax(rate, amount){
   return (rate/100)*amount
