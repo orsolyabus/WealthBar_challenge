@@ -24,8 +24,13 @@ function calculateFutureValue(rate, amount, years) {
   return Math.round(amount*(1+rate/100)**years)
 }
 
+function calculatePresentValue(inflationRate, amount, years){
+  return Math.round(amount/((1+inflationRate/100)**years))
+}
+
 module.exports = {
   calculateTax,
   calculateAfterTaxDeposit,
-  calculateFutureValue
+  calculateFutureValue,
+  calculatePresentValue
 }

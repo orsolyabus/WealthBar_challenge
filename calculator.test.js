@@ -1,4 +1,9 @@
-const { calculateTax, calculateAfterTaxDeposit, calculateFutureValue } = require("./calculator")
+const { 
+  calculateTax, 
+  calculateAfterTaxDeposit, 
+  calculateFutureValue,
+  calculatePresentValue
+} = require("./calculator")
 {
   console.log("testing 'calculateTax'")
   const currentTaxRate = 40;
@@ -22,6 +27,15 @@ const { calculateTax, calculateAfterTaxDeposit, calculateFutureValue } = require
   const years = 20;
   const futureValue = calculateFutureValue(currentReturnRate, deposit, years)
   assertEqual(futureValue, 3207)
+}
+
+{
+  console.log("testing 'calculatePresentValue'")
+  const inflationRate = 3;
+  const deposit = 1000;
+  const years = 20;
+  const presentValue = calculatePresentValue(inflationRate, deposit, years)
+  assertEqual(presentValue, 554)
 }
 
 function assertEqual( check , base){
