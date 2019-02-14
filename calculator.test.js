@@ -1,6 +1,6 @@
 const { 
   calculateTax, 
-  calculateAfterTaxDeposit, 
+  calculateAfterTaxValue, 
   calculateFutureValue,
   calculatePresentValue,
   calculateRealValue
@@ -14,11 +14,11 @@ const {
 }
 
 {
-  console.log("testing 'calculateAfterTaxDeposit'")
+  console.log("testing 'calculateAfterTaxValue'")
   const currentTaxRate = 40;
   const deposit = 1000;
-  const afterTaxDeposit = calculateAfterTaxDeposit(currentTaxRate, deposit)
-  assertEqual(afterTaxDeposit, 600)
+  const afterTaxValue = calculateAfterTaxValue(currentTaxRate, deposit)
+  assertEqual(afterTaxValue, 600)
 }
 
 {
