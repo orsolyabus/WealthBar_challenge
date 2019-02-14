@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>TFSA vs RRSP Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+  <script src="main.js"></script>
+</head>
+<body>
+  <h1>TFSA vs RRSP Calculator</h1>
+  <p>This is a financial calculator that compares using a TFSA (tax-free savings account) and RRSP (registered retirement savings plan) to save money.<br/>
+    RRSPs allow you to defer paying taxes until you withdraw money from your account. When you deposit after-tax money into your RSP you get a tax refund on that money. A TFSA, on the other hand, allows you to save after tax money in a way that the future growth (interest earned) remains tax-free forever so all future withdrawals are not taxed.
+  </p>
+  <div>
+    <form action="">
+      <div>
+        <label for="current-tax-rate">Current Marginal Tax Rate</label>
+        <input type="text" id="current-tax-rate">
+        <small>Your current highest income tax bracket</small>
+      </div>
+      <div>
+        <label for="retirement-tax-rate">Tax Rate in Retirement</label>
+        <input type="text" id="retirement-tax-rate">
+        <small>The average income tax you will pay in retirement</small>
+      </div>
+      <div>
+        <label for="deposit">Deposit</label>
+        <input type="text" id="deposit">
+        <small>The amount of money being deposited in dollars</small>
+      </div>
+      <div>
+        <label for="years">Years Invested</label>
+        <input type="text" id="years">
+        <small>The number of years before this money is withdrawn again</small>
+      </div>
+      <div>
+        <label for="return-rate">Return Rate</label>
+        <input type="text" id="return-rate">
+        <small>Rate at which the invested money grows each year</small>
+      </div>
+      <div>
+        <label for="inflation-rate">Inflation Rate</label>
+        <input type="text" id="inflation-rate">
+        <small>The expected rate of inflation each year</small>
+      </div>
+      <input type="submit" value="Calculate">
+    </form>
+  </div>
+</body>
+</html>
