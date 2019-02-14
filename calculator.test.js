@@ -1,10 +1,3 @@
-const { 
-  calculateTax, 
-  calculateAfterTaxValue, 
-  calculateFutureValue,
-  calculatePresentValue,
-  calculateRealValue
-} = require("./calculator")
 {
   console.log("testing 'calculateTax'")
   const currentTaxRate = 40;

@@ -83,10 +83,3 @@ function calculateRealValue(returnRate, inflationRate, amount, years){
   return Math.round(amount*((1+returnRate/100)/(1+inflationRate/100))**years)
 }
 
-module.exports = {
-  calculateTax,
-  calculateAfterTaxValue,
-  calculateFutureValue,
-  calculatePresentValue,
-  calculateRealValue
-}
