@@ -42,7 +42,20 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#after-tax-retirement-sum-RRSR").innerHTML = afterTaxRetirementSumRRSR
     document.querySelector("#adjusted-after-tax-retirement-sum-TFSA").innerHTML = adjustedAfterTaxRetirementSumTFSA
     document.querySelector("#adjusted-after-tax-retirement-sum-RRSR").innerHTML = adjustedAfterTaxRetirementSumRRSR
-
+  })
+  
+  // clear data
+  document.querySelector("#clear").addEventListener("click", event => {
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach(input => {
+      if (input.id!="submit"){
+        input.value = ""
+      }
+    })
+    const tableValues = document.querySelectorAll(".table-value");
+    tableValues.forEach(value => {
+        value.innerHTML = ""
+    })
   })
 });
 

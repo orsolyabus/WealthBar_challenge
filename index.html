@@ -13,6 +13,7 @@
   <p>This is a financial calculator that compares using a TFSA (tax-free savings account) and RRSP (registered retirement savings plan) to save money.<br/>
     RRSPs allow you to defer paying taxes until you withdraw money from your account. When you deposit after-tax money into your RSP you get a tax refund on that money. A TFSA, on the other hand, allows you to save after tax money in a way that the future growth (interest earned) remains tax-free forever so all future withdrawals are not taxed.
   </p>
+  
   <div>
     <form action="" id="calculator-form">
       <div>
@@ -45,8 +46,9 @@
         <input type="text" name="inflation-rate" id="inflation-rate">
         <small>The expected rate of inflation each year</small>
       </div>
-      <input type="submit" value="Calculate">
+      <input type="submit" id="submit" value="Calculate">
     </form>
+
     <div id="results">
       <table>
         <tr>
@@ -56,41 +58,44 @@
         </tr>
         <tr>
           <td>Pre-tax Income</td>
-          <td id="deposit-TFSA"></td>
-          <td id="deposit-RRSR"></td>
+          <td id="deposit-TFSA" class="table-value"></td>
+          <td id="deposit-RRSR" class="table-value"></td>
         </tr>
         <tr>
           <td id="">after-tax deposit</td>
-          <td id="after-tax-deposit-TFSA"></td>
-          <td id="after-tax-deposit-RRSR"></td>
+          <td id="after-tax-deposit-TFSA" class="table-value"></td>
+          <td id="after-tax-deposit-RRSR" class="table-value"></td>
         </tr>
         <tr>
           <td id="">Value at retirement</td>
-          <td id="retirement-sum-TFSA"></td>
-          <td id="retirement-sum-RRSR"></td>
+          <td id="retirement-sum-TFSA" class="table-value"></td>
+          <td id="retirement-sum-RRSR" class="table-value"></td>
         </tr>
         <tr>
           <td id="">inflation adjusted Value at retirement</td>
-          <td id="adjusted-retirement-sum-TFSA"></td>
-          <td id="adjusted-retirement-sum-RRSR"></td>
+          <td id="adjusted-retirement-sum-TFSA" class="table-value"></td>
+          <td id="adjusted-retirement-sum-RRSR" class="table-value"></td>
         </tr>
         <tr>
           <td id="">Tax upon withdrawal</td>
-          <td id="tax-at-withdrawal-TFSA"></td>
-          <td id="tax-at-withdrawal-RRSR"></td>
+          <td id="tax-at-withdrawal-TFSA" class="table-value"></td>
+          <td id="tax-at-withdrawal-RRSR" class="table-value"></td>
         </tr>
         <tr>
           <td id="">after-tax future value</td>
-          <td id="after-tax-retirement-sum-TFSA"></td>
-          <td id="after-tax-retirement-sum-RRSR"></td>
+          <td id="after-tax-retirement-sum-TFSA" class="table-value"></td>
+          <td id="after-tax-retirement-sum-RRSR" class="table-value"></td>
         </tr>
         <tr>
           <td id="">inflation adjusted after-tax future value</td>
-          <td id="adjusted-after-tax-retirement-sum-TFSA"></td>
-          <td id="adjusted-after-tax-retirement-sum-RRSR"></td>
+          <td id="adjusted-after-tax-retirement-sum-TFSA" class="table-value"></td>
+          <td id="adjusted-after-tax-retirement-sum-RRSR" class="table-value"></td>
         </tr>
       </table>
     </div>
+    <br/>
+    <button id="clear">Clear</button>
+    
   </div>
 </body>
 </html>
